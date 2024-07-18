@@ -5,13 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+      <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
   </head>
   <body>
     <main>
-        <h1>Yuri Pellegrini's Game Programming Portfolio</h1>  
+        <h1 class="text-3xl font-bold underline text-clifford">Yuri Pellegrini's Game Programming Portfolio</h1>  
+        <div class="lg:content-auto">
+            TEST
+          </div>
     </main>
 	<script src="index.js"></script>
   </body>
+  <footer>
+    <p>Made with: 
+        <a href="https://tailwindcss.com/">tailwindcss</a></p>
+    <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+  </footer> 
 </html>
+
