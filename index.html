@@ -15,7 +15,7 @@
           <!-- Core theme CSS (includes Bootstrap)-->
           <link href="css/styles.css" rel="stylesheet" />
       </head>
-      <body>
+      <body class="jnjbg jnjtxt">
           <!-- Navigation-->
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container px-4 px-lg-5">
@@ -43,26 +43,66 @@
 
           <!-- Games section-->
           <section class="py-5">
-            <h1>[Work in progress]</h1>
+            <h1 class="jnjtxt">[Work in progress]</h1>
               <div class="container px-4 px-lg-5 my-5">
-                <h1>Solo projects</h1>
+                <h1 class="jnjtxt">Solo projects</h1>
 
-                  <div class="row gx-4 gx-lg-5 align-items-center">
+                  <div class="row gx-4 gx-lg-5 align-items-center jnjtxt">
                       <div class="col-md-6">
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item mb-5 mb-md-0" src="./content/slhope_test.mp4" loading="eager" allowfullscreen></iframe><br/><br/>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-6 jnjtxt">
                           <div class="small mb-1"><a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" aria-current="page" href="https://godotengine.org/">Made with Godot 4</a></div>
-                          <h1 class="display-5 fw-bolder">Co-op Top Down 3D Shooter</h1>
+                          <h1 class="display-5 fw-bolder jnjtxt">Co-op Top Down 3D Shooter</h1>
                           <p class="lead">This Helldivers-inspired cooperative shooter is not yet close to be a complete game, but will be improved with new features in the upcoming months!</p>
                           <p class="lead">Project highlights:</p>
                           <ul>
                             <li class="lead">Dynamic camera: it reacts to the distance between players</li>
                             <li class="lead">Friendly Fire</li>
                             <li class="lead">Multiple player inputs (up to four!)</li>
-                          </ul>                   
+                          </ul>  
+                          
+                          <p>
+                            <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                              Dynamic Camera Code Snippet
+                            </button>
+                          </p>
+                          <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <code>
+
+                                    //Function to get the centroid of the positions of the players <br/>
+                                    func get_centroid(p_positions):<br/>
+                                    &nbsp; var px :float = 0.0;<br/>
+                                    &nbsp; var pz :float = 0.0;<br/>
+                                    &nbsp; var py :float = 0.0;<br/>
+                                    &nbsp; var cnt = 0;<br/><br/>
+
+                                    &nbsp; var max_distance = 0.0;<br/><br/>
+
+                                    &nbsp; for pos in p_positions:<br/>
+                                    &nbsp;&nbsp; cnt += 1;<br/>
+                                    &nbsp;&nbsp; px += pos.x;<br/>
+                                    &nbsp;&nbsp; pz += pos.z;<br/>
+                                    &nbsp;&nbsp; for p in p_positions:<br/>
+                                    &nbsp;&nbsp;&nbsp; if p.distance_to(pos) > max_distance:<br/>
+                                    &nbsp;&nbsp;&nbsp;&nbsp; max_distance = p.distance_to(pos);<br/>
+                                    &nbsp;&nbsp; if max_distance > 15.0:<br/>
+                                    &nbsp;&nbsp;&nbsp; py += max_distance-15.0;<br/>
+                                    &nbsp;&nbsp;&nbsp; py = clamp(py, py, 5.0)<br/><br/>
+                                            
+                                    &nbsp; px = px/cnt;<br/>
+                                    &nbsp; pz = pz/cnt;<br/><br/>
+
+                                    &nbsp; return Vector3(px-7.0, camera_position.y + py, pz)<br/>
+
+                                </code>
+                                
+                            </div>
+                          </div>  
+
                   </div>
 
                   <p class="lead">Robot characters from: <a class="nav-link active" aria-current="page" href="https://quaternius.com/packs/ultimatedanimatedcharacter.html">https://quaternius.com/packs/ultimatedanimatedcharacter.html</a></p>
