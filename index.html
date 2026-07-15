@@ -75,15 +75,25 @@
                                 <span>GPU/ML R&amp;D</span>
                             </div>
                         </div>
-                        <!-- cahnge with something interactive -->
+                        <!-- Mini Game to entertain my visitors ;) -->
                         <div class="col-lg-6 mt-5 mt-lg-0">
                             <div class="hero-visual-frame">
-                                <video class="hero-video" autoplay muted loop playsinline controls poster="">
-                                    <source src="content/slhope_test.mp4" type="video/mp4" />
-                                </video>
+                                <div class="hero-mini-game" role="region" aria-label="Mini game canvas">
+                                    <canvas
+                                        id="hero-mini-game-canvas"
+                                        class="hero-mini-game-canvas"
+                                        width="640"
+                                        height="400"
+                                        aria-label="Mini game: collect squares"
+                                    ></canvas>
+                                    <div class="hero-mini-game-controls">
+                                        <span>Steer: ←/→ · A/D · hold left/right side</span>
+                                        <button id="hero-mini-game-reset" class="hero-mini-game-reset" type="button">Reset</button>
+                                    </div>
+                                </div>
                                 <div class="hero-visual-caption">
-                                    <strong>Gameplay capture</strong>
-                                    <span>Current Godot 4 co-op shooter build recorded directly from prototype footage.</span>
+                                    <strong>While you're here...</strong>
+                                    <span>Steer left and right to dodge oncoming obstacles. Score climbs up the further you drive!</span>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +118,7 @@
                         <article id="project-windfall" class="project-card project-card-featured project-card-major project-card-major-warm">
                             <div class="project-media">
                                 <video autoplay muted loop playsinline controls>
-                                    <source src="content/slhope_test.mp4" type="video/mp4" />
+                                    <source src="content/Windfallv010 DEMOCut.mp4" type="video/mp4" />
                                 </video>
                             </div>
                             <div class="project-content">
@@ -298,6 +308,7 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3RnW3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="game-script.js"></script>
     </body>
 </html>
   
