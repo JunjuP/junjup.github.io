@@ -11215,6 +11215,16 @@ body.portfolio-body {
     text-align: center !important;
   }
 }
+
+.site-nav {
+  --bs-navbar-color: #f7f2ea;
+  --bs-navbar-hover-color: #ffb15d;
+  --bs-navbar-active-color: #f7f2ea;
+  --bs-navbar-brand-color: #f7f2ea;
+  --bs-navbar-brand-hover-color: #ffb15d;
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28247,242,234,0.95%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 @media (min-width: 1200px) {
   .fs-1 {
     font-size: 2.5rem !important;
